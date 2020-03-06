@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="form-container mt-5 mx-auto"  style="width: 350px;">
+        <center><h1>Log In</h1></center>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col form-group">
+                    <input type="text" name="uname" id="uname"
+                        class="form-control form-control-lg border-bottom border-dark shadow-none"
+                        placeholder="User Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm">
+                    <input type="password" name="passwd" id="passwd" class="form-control form-control-lg border-bottom border-dark shadow-none" placeholder="Password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="submit" class="btn btn-info" value="Log In">
+                </div>
+            </div>
+        </form>
+        <a href="{% url 'signup' %}">Not Have Account Sign Up</a>
+        |
+        <a href="#">Forget Password</a>
+    </div>
+</div>
+{% endblock body %}

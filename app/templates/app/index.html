@@ -41,21 +41,49 @@
         width: 100%;
         height: 500px;
     }
-    
-    #forts-lists .fort{
+
+    #forts-lists .fort {
         width: 100%;
         height: 300px;
-        background-size: cover;
-        margin: 20px 0;
         display: flex;
-        text-align: center;
+        align-items: flex-end;
+        background-size: cover;
 
     }
 
-    #forts-lists .fort .fort-title{
-        height: 30px;
+
+    #forts-lists .fort .fort-title h3 {
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
     }
-    
+
+    .link-button {
+
+        width: 200px;
+        height: 40px;
+        color: orangered;
+        border: 1px solid orangered;
+        font-weight: bold;
+        transition: 0.7s;
+
+    }
+
+    .link-button:hover {
+        background-color: orangered;
+        color: white;
+    }
+
+    #forts-lists .fort .fort-title .butt {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #forts-lists .fort .fort-title {
+        width: 100%;
+        padding: 10px 0;
+    }
 </style>
 {% endblock style %}
 {% block body %}
@@ -98,12 +126,16 @@
     <section class="my-5" id="forts-lists">
 
         {% for fort in forts %}
-        <div class="row">
+        <div class="row my-4">
             <div class="col">
-
                 <div class="fort" id="{{fort.pk}}" style="background-image: url({{media_url}}{{fort.image}});">
-                    <div class="fort-title">
-                        <h3>{{fort.name}}</h3>
+                    <div class="fort-title row">
+                        <div class="fort-name col-sm-6 my-auto">
+                            <h3 class="ml-3">{{fort.name}}</h3>
+                        </div>
+                        <div class="butt col-sm-6">
+                            <a href="fort/{{fort.name}}" class="btn link-button">See More</a>
+                        </div>
                     </div>
                 </div>
             </div>

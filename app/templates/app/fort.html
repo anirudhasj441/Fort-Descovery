@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}{{fort.name}}{% endblock title %}
+{% block body %}
+<div class="image">
+    <img src="{{media_url}}{{fort.image}}" alt="" class="image-fluid" style="max-width: 100%;height:auto;width:100%;max-height:100vh">
+</div>
+<div class="container-fluid">
+    <div class="screenshots">
+        <h4>Screenshots</h4>
+        <div class="row">
+                <div class="col-sm-4">
+                    <center>
+
+                        <img src="{{media_url}}{{fort.sc1}}" alt="..." class="img-thumbnail mx-auto">
+                    </center>
+                </div>
+                <div class="col-sm-4">
+                    <center>
+
+                        <img src="{{media_url}}{{fort.sc2}}" alt="..." class="img-thumbnail">
+                    </center>
+                </div>
+                <div class="col-sm-4">
+                    <center>
+
+                        <img src="{{media_url}}{{fort.sc3}}" alt="..." class="img-thumbnail">
+                    </center>
+                </div>
+        </div>
+    </div>
+    <div class="title">
+        <h3>{{fort.name}}</h3>
+    </div>
+    <div class="desc">
+        <p>{{fort.desc}}</p>
+    </div>
+</div>
+{% endblock body %}
